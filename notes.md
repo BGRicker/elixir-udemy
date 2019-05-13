@@ -33,3 +33,21 @@ pattern matching - "Elixir's replacement for variable assignment"
   - [color1, color2] = ["red", "blue"] #=> color1 => "red", color2 => "blue"
   - [c1, c2 ,c3] = ["red", "blue"] #=> MatchError no match of right hand side
 
+pipe operator
+pre-pipe:
+  def create_hand(hand_size) do
+    deck = Cards.create_deck
+    deck = Cards.shuffle(deck)
+    hand = Cards.deal(deck, hand_size)
+  end
+
+post-pipe:
+  def create_hand(hand_size) do
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
+  end
+
+result of each function is auto-passed down to next function in chain
+  - elixir automatically injects as first argument
+  - consistent first arguments allows you to chain like this
