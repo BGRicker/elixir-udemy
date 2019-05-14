@@ -51,3 +51,21 @@ post-pipe:
 result of each function is auto-passed down to next function in chain
   - elixir automatically injects as first argument
   - consistent first arguments allows you to chain like this
+
+doctests:
+  - writing documentation that can be tested with `mix test` as doctests:
+
+  @doc """
+    checks to see if a card is contained within the deck
+
+  ## Examples
+
+  iex> deck = Cards.create_deck
+  iex> Cards.contains?(deck, "Ace of Spades")
+  true
+  """
+  def contains?(deck, card) do
+    Enum.member?(deck, card)
+  end
+
+  - `iex>` code runs and makes assertion based on last line of code `true`
