@@ -85,3 +85,16 @@ maps:
     - iex(8)> Map.put(colors, :primary, "blue") #=> %{primary: "blue"}
     - iex(9)> colors #=> %{primary: "red"}
     - %{ colors | primary: "blue" } # another way to update a hash/map value
+
+tuples and keyword lists:
+  - colors = [{:primary, "red"}, {:secondary, "green"}] #=> [primary: red, secondary: "green"]
+    - colors[:primary] #=> "red"
+  - colors = [primary: "red", secondary: "blue"] #=> [primary: "red", secondary: "blue"]
+  - tuple:
+    - %{primary: "red", primary: "blue"} #=> %{primary: "blue"}
+  - keyword list:
+    - [primary: "blue", primary: "red"] #=> [primary: "blue", primary: "red"]
+    - keyword lists used in Ecto for DB work in Phoenix:
+      - query = User.find_where([where: user.age > 10, where: user.subscribed = true])
+      - query = User.find_where where: user.age > 10, where: user.subscribed = true
+
