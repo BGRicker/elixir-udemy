@@ -69,3 +69,19 @@ doctests:
   end
 
   - `iex>` code runs and makes assertion based on last line of code `true`
+
+maps:
+  - key/value pairs, like hashes in Ruby
+  - colors = %{primary: "red", secondary: "blue"}
+  - colors.primary #=> "red"
+  - %{secondary: secondary_color} = colors # pattern matching
+    - elixir looks at colors, does it have a top level map on either side?
+    - does colors have a key of secondary?
+  - secondary_color = "blue"
+
+  - updating a map creates a copy of the map, doesn't update it:
+    - colors = %{primary: red}
+    - iex(7)> colors #=> %{primary: "red"}
+    - iex(8)> Map.put(colors, :primary, "blue") #=> %{primary: "blue"}
+    - iex(9)> colors #=> %{primary: "red"}
+    - %{ colors | primary: "blue" } # another way to update a hash/map value
