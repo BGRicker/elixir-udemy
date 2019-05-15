@@ -98,3 +98,12 @@ tuples and keyword lists:
       - query = User.find_where([where: user.age > 10, where: user.subscribed = true])
       - query = User.find_where where: user.age > 10, where: user.subscribed = true
 
+Structs
+  defining a Struct:
+    defmodule Identicon.Image do
+      defstruct hex: nil
+    end
+  using a Struct in iex:
+  - %Identicon.Image{hex: "cool"}
+  - Structs enforce that the only properties allowed are defined in that module
+  - this struct is just a map, no functions would work in that Struct module
