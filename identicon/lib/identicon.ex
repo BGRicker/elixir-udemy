@@ -15,6 +15,15 @@ defmodule Identicon do
     |> Enum.chunk(3)
   end
 
+  def mirror_row(row) do
+    [first, second] = row
+    row ++ [second, first]
+
+    # alternatively, with full list assignment
+    # [first, second, third] = row
+    # [first, second, third, second, first]
+  end
+
   def pick_color(image) do
     %Identicon.Image{hex: [r, g, b | _tail]} = image
 
