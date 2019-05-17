@@ -113,3 +113,6 @@ Pattern Matching first elements of array
   - cool = [1, 2, 3, 4]
   - [first, second | \_tail] = cool
   - [first, second] #=> 1, 2
+
+Tuples should be used whenever you want to explain that different values have
+different meanings rather than just sharing a list
