@@ -116,3 +116,8 @@ Pattern Matching first elements of array
 
 Tuples should be used whenever you want to explain that different values have
 different meanings rather than just sharing a list
+
+passing a reference to a function with map:
+    |> Enum.map(&mirror_row/1)
+      - if I have a function called mirror_row, use the one that takes 1 argument (/1)
+      - `&` then `function_name` then `/ #of arguments the function takes`
