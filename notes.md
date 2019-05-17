@@ -107,3 +107,12 @@ Structs
   - %Identicon.Image{hex: "cool"}
   - Structs enforce that the only properties allowed are defined in that module
   - this struct is just a map, no functions would work in that Struct module
+
+Pattern Matching first elements of array
+  - if you want to ignore later elements of a List, use | \_tail
+  - cool = [1, 2, 3, 4]
+  - [first, second | \_tail] = cool
+  - [first, second] #=> 1, 2
+
+Tuples should be used whenever you want to explain that different values have
+different meanings rather than just sharing a list
