@@ -121,3 +121,10 @@ passing a reference to a function with map:
     |> Enum.map(&mirror_row/1)
       - if I have a function called mirror_row, use the one that takes 1 argument (/1)
       - `&` then `function_name` then `/ #of arguments the function takes`
+
+## Phoenix
+  - project generation: `mix phoenix.new discuss`
+  - database setup: `mix ecto.create`
+  - server startup: `mix phoenix.server`
+  - bundle install: `mix deps.get` #=> Gemfile: mix.exs
+
